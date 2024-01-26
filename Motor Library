@@ -1,0 +1,23 @@
+import time
+import board
+from adafruit_motorkit import MotorKit
+from adafruit_motor import stepper
+
+# Initialise the first hat on the default address
+kit1 = MotorKit()
+# Initialise the second hat on a different address
+kit2 = MotorKit(address=0x61)
+
+# Then you can use kit1 and kit2 to control the motors attached to the associated hat.
+
+for i in range(200):
+    kit1.stepper1.onestep(style=stepper.MICROSTEP)
+
+
+
+
+
+# shuts down ability for motors to freely spin
+kit1.motor1.throttle = None
+kit1.motor2.throttle = None
+kit2.motor3.throttle = None
