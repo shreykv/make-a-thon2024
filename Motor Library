@@ -9,13 +9,14 @@ kit1 = MotorKit()
 kit2 = MotorKit(address=0x61)
 
 # Then you can use kit1 and kit2 to control the motors attached to the associated hat.
+for i in range(2400):
+    
+    kit1.stepper1.onestep(direction=stepper.FORWARD, style=stepper.SINGLE)
+    time.sleep(.005)  
 
-for i in range(200):
-    kit1.stepper1.onestep(style=stepper.MICROSTEP)
 
 
-
-
+ 
 
 # shuts down ability for motors to freely spin
 kit1.motor1.throttle = None
